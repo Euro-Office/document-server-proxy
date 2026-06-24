@@ -1,32 +1,32 @@
 version: '2'
 services:
-  onlyoffice-documentserver:
-    container_name: onlyoffice-documentserver
-    image: onlyoffice/documentserver-ie:latest
+  euro-office-documentserver:
+    container_name: euro-office-documentserver
+    image: ghcr.io/euro-office/documentserver:latest
     stdin_open: true
     restart: always
     networks:
-      onlyoffice:
+      euro-office:
         aliases:
           - backendserver-address
     expose:
       - '80'
 
-  onlyoffice-haproxy:
-    container_name: onlyoffice-haproxy
+  euro-office-haproxy:
+    container_name: euro-office-haproxy
     image: haproxy:1.5
     depends_on:
-      - onlyoffice-documentserver
+      - euro-office-documentserver
     stdin_open: true
     volumes:
       - ../../../haproxy/minimal.cfg:/usr/local/etc/haproxy/haproxy.cfg
     restart: always
     networks:
-     - onlyoffice
+     - euro-office
     ports:
       - '80:80'
 
 networks:
-  onlyoffice:
+  euro-office:
     driver: 'bridge'
 

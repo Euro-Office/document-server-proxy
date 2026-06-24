@@ -11,7 +11,7 @@ Install Ansible if it is not already installed, installation instructions can be
 Clone this repository on your local machine with the command: 
 
 ```bash
-git clone https://github.com/ONLYOFFICE/document-server-proxy.git
+git clone https://github.com/Euro-Office/document-server-proxy.git
 ```
 
 ### Step 3 

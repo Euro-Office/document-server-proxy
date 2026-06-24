@@ -21,7 +21,7 @@
 
     - name: Set up ds server port
       ansible.builtin.debconf:
-        name: onlyoffice-documentserver
+        name: euro-office-documentserver
         question: onlyoffice/ds-port
         value: 9378
         vtype: string

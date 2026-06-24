@@ -1,22 +1,22 @@
 version: '2'
 services:
-  onlyoffice-documentserver:
-    container_name: onlyoffice-documentserver
-    image: onlyoffice/documentserver-ie:latest
+  euro-office-documentserver:
+    container_name: euro-office-documentserver
+    image: ghcr.io/euro-office/documentserver:latest
     stdin_open: true
     restart: always
     networks:
-      onlyoffice:
+      euro-office:
         aliases:
           - backendserver-address
     expose:
       - '80'
 
-  onlyoffice-traefik:
-    container_name: onlyoffice-traefik
+  euro-office-traefik:
+    container_name: euro-office-traefik
     image: traefik:1.5
     depends_on:
-      - onlyoffice-documentserver
+      - euro-office-documentserver
     stdin_open: true
     volumes:
       - ../../../traefik/proxy-https-to-http.toml:/etc/traefik/traefik.toml
@@ -24,12 +24,12 @@ services:
       - ./server.key:/etc/ssl/private/server.key
     restart: always
     networks:
-     - onlyoffice
+     - euro-office
     ports:
       - '80:80'
       - '443:443'
 
 networks:
-  onlyoffice:
+  euro-office:
     driver: 'bridge'
 

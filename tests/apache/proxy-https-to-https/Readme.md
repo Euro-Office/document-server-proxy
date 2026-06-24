@@ -1,6 +1,6 @@
 #### Generation of Self Signed Certificates
 ```
-./gen-onlyoffice-cert.sh
+./gen-euro-office-cert.sh
 ```
 #### To run test
 ```

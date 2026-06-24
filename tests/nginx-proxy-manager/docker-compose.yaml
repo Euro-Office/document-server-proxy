@@ -10,9 +10,9 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
 
-  onlyoffice-documentserver:
-    container_name: onlyoffice-documentserver
-    image: onlyoffice/documentserver:latest
+  euro-office-documentserver:
+    container_name: euro-office-documentserver
+    image: ghcr.io/euro-office/documentserver:latest
     stdin_open: true
     restart: always
     expose:

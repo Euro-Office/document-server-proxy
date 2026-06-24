@@ -1,4 +1,4 @@
-# 🚀 Deploying ONLYOFFICE DocumentServer Behind Nginx Proxy Manager
+# 🚀 Deploying Euro-Office DocumentServer Behind Nginx Proxy Manager
 
 
 ## 📦 Quick Start
@@ -6,7 +6,7 @@
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/ONLYOFFICE/document-server-proxy.git
+   git clone https://github.com/Euro-Office/document-server-proxy.git
    cd ./document-server-proxy/tests/nginx-proxy-manager
    ```
 
@@ -34,5 +34,5 @@
 
 4. **Configue NPM**
 
-A visual video instruction with proxy manager settings is located [here](https://github.com/ONLYOFFICE/document-server-proxy/blob/master/nginx-proxy-manager/README.md), read it if necessary.
+A visual video instruction with proxy manager settings is located [here](https://github.com/Euro-Office/document-server-proxy/blob/master/nginx-proxy-manager/README.md), read it if necessary.
 

@@ -1,26 +1,26 @@
 version: '2'
 services:
-  onlyoffice-documentserver:
-    container_name: onlyoffice-documentserver
-    image: onlyoffice/documentserver-ie:latest
+  euro-office-documentserver:
+    container_name: euro-office-documentserver
+    image: ghcr.io/euro-office/documentserver:latest
     stdin_open: true
     volumes:
       - ./backend.crt:/var/www/onlyoffice/Data/certs/onlyoffice.crt
       - ./backend.key:/var/www/onlyoffice/Data/certs/onlyoffice.key
     restart: always
     networks:
-      onlyoffice:
+      euro-office:
         aliases:
           - backendserver-address
     expose:
       - '80'
       - '443'
 
-  onlyoffice-httpd:
-    container_name: onlyoffice-httpd
+  euro-office-httpd:
+    container_name: euro-office-httpd
     image: httpd:2.4.23
     depends_on:
-      - onlyoffice-documentserver
+      - euro-office-documentserver
     stdin_open: true
     volumes:
       - ../../../apache/proxy-https-to-https.conf:/usr/local/apache2/conf/httpd.conf
@@ -29,12 +29,12 @@ services:
       - ./backend.crt:/usr/share/ca-certificates/backend.crt
     restart: always
     networks:
-     - onlyoffice
+     - euro-office
     ports:
       - '80:80'
       - '443:443'
 
 networks:
-  onlyoffice:
+  euro-office:
     driver: 'bridge'
 

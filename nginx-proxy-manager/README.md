@@ -19,7 +19,7 @@ After logging into the NPM dashboard:
 
    **Forward Hostname / IP:**
    ```
-   <DocumentServer address, in this docker-compose stand that should be 'onlyoffice-documentserver'>
+   <DocumentServer address, in this docker-compose stand that should be 'euro-office-documentserver'>
    ```
 
    **Forward Port:**
@@ -28,7 +28,7 @@ After logging into the NPM dashboard:
    ```
 
    Optional Settings:
-   - **Enable Websockets Support** — Should be enabled! ONLYOFFICE DocumentServer use websocket
+   - **Enable Websockets Support** — Should be enabled! Euro-Office DocumentServer use websocket
    - **Block Common Exploits** — recommended
 
    Video manual:
